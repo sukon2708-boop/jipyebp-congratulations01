@@ -18,23 +18,23 @@ music.addEventListener("loadedmetadata", () => {
   durationText.textContent = formatTime(music.duration);
 });
 
-/* อัปเดตระหว่างเล่น */
+/* เวลาเล่น */
 music.addEventListener("timeupdate", () => {
   progress.value = music.currentTime;
   currentTimeText.textContent = formatTime(music.currentTime);
 });
 
-/* ลากแถบเพลง */
+/* ลากแถบ */
 progress.addEventListener("input", () => {
   music.currentTime = progress.value;
 });
 
-/* ปุ่มเล่น / หยุด */
+/* เล่น / หยุด */
 playBtn.addEventListener("click", () => {
   if(music.paused){
     music.play();
     vinyl.classList.add("spin");
-    playBtn.textContent = "⏸ หยุดเพลง";
+    playBtn.textContent = "|| หยุดเพลง";
   }else{
     music.pause();
     vinyl.classList.remove("spin");
@@ -46,4 +46,5 @@ playBtn.addEventListener("click", () => {
 music.addEventListener("ended", () => {
   vinyl.classList.remove("spin");
   playBtn.textContent = "▶ เล่นเพลง";
+  progress.value = 0;
 });
