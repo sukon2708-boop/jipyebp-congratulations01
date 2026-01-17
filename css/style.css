@@ -422,25 +422,41 @@ p{
 /* ===============================
    MEMORY GALLERY – EQUAL SIZE
 =============================== */
+/* ===== MEMORY GALLERY FIX ===== */
 .gallery{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
+  grid-template-columns: repeat(3, 1fr);
+  gap:14px;
+  margin-top:16px;
 }
 
-/* มือถือ: เรียงแนวตั้ง */
-@media (max-width:520px){
+
+@media(max-width:600px){
   .gallery{
-    grid-template-columns:1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .gallery img{
+    max-width:320px;
+    margin:0 auto;
   }
 }
 
+
 .gallery img{
   width:100%;
-  aspect-ratio:1 / 1;
-  object-fit:cover;
-  border-radius:18px;
+  aspect-ratio: 1 / 1;     /* 🔥 บังคับเป็นสี่เหลี่ยมจตุรัส */
+  object-fit: cover;      /* 🔥 ครอบรูป ไม่ยืด */
+  border-radius:16px;     /* ขอบมน */
+  cursor:pointer;
+  box-shadow:0 4px 12px rgba(0,0,0,.12);
+  transition:.25s ease;
 }
+
+.gallery img:hover{
+  transform:scale(1.03);
+}
+
 
 /* hover นิดเดียวให้ดูมีชีวิต */
 .gallery img:hover{
@@ -654,8 +670,8 @@ p{
 
 /* ซองจดหมาย */
 .gift-stage img{
-  width:560px;          /* 🔥 ขยายรูป */
-  max-width:200vw;
+  width:1000px;          /* 🔥 ขยายรูป */
+  max-width:500vw;
   transition:.35s ease;
 }
 
