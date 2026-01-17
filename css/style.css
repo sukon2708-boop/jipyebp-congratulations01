@@ -670,8 +670,8 @@ p{
 
 /* ซองจดหมาย */
 .gift-stage img{
-  width:1000px;          /* 🔥 ขยายรูป */
-  max-width:500vw;
+  width:730px;          /* 🔥 ขยายรูป */
+  max-width:430vw;
   transition:.35s ease;
 }
 
