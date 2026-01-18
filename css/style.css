@@ -165,24 +165,24 @@ p{
 
 /* ขนาดปกติ (meg1 / meg2) */
 .gift-stage img{
-  width:85vw;          /* ใหญ่เกือบเต็มจอ */
-  max-width:480px;
+  width:96vw;          /* 🔥 ใหญ่กว่าของเดิม */
+  max-width:570px;     /* กันใหญ่เกินบนจอใหญ่ */
   height:auto;
-  transition:.4s ease;
+  transition:.45s ease;
 }
 
 /* ===============================
    FINAL IMAGE (meg3)
 =============================== */
 .gift-stage.final-open img{
-  width:96vw;          /* 🔥 ใหญ่สุด */
+  width:105vw;         /* 🔥 เต็มจอ */
   max-width:none;     /* ไม่จำกัดขนาด */
 }
 
 /* มือถือ */
 @media (max-width:480px){
   .gift-stage img{
-    width:90vw;
+    width:98vw;        /* เกือบเต็มจอ */
   }
 
   .gift-stage.final-open img{
