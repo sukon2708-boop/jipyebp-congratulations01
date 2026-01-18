@@ -157,16 +157,16 @@ p{
    GIFT IMAGE – FULL SCREEN FEEL
 =============================== */
 
-.gift-stage{
+.giftstage{
   display:flex;
   justify-content:center;
   align-items:center;
 }
 
 /* ขนาดปกติ (meg1 / meg2) */
-.gift-stage img{
-  width:96vw;          /* 🔥 ใหญ่กว่าของเดิม */
-  max-width:570px;     /* กันใหญ่เกินบนจอใหญ่ */
+.giftstage img{
+  width:150vw;          /* 🔥 ใหญ่กว่าของเดิม */
+  max-width:600px;     /* กันใหญ่เกินบนจอใหญ่ */
   height:auto;
   transition:.45s ease;
 }
