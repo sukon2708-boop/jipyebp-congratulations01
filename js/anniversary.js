@@ -3,24 +3,27 @@ const giftStage = document.getElementById("giftStage");
 const hintText = document.getElementById("hintText");
 const result = document.getElementById("result");
 
-let step = 0;
+let opened = false;
 
-giftImg.addEventListener("click", async () => {
+giftImg.addEventListener("click", () => {
 
-  if(step === 0){
-    // คลิกครั้งที่ 1
-    giftStage.classList.add("opening");
-    giftImg.src = "assets/meg2.png";
-    hintText.textContent = "กดอีกครั้งหนึ่ง ";
-    step = 1;
-  }
-  else if(step === 1){
-    // คลิกครั้งที่ 2
+  if(opened) return; // กันคลิกซ้ำ
+  opened = true;
+
+  // ซ่อนคำใบ้
+  hintText.style.display = "none";
+
+  // แสดงภาพเปิดซอง (meg2)
+  giftStage.classList.add("opening");
+  giftImg.src = "assets/meg2.png";
+
+  // รอแป๊บเดียว → ขยาย + meg3
+  setTimeout(() => {
     giftStage.classList.remove("opening");
+    giftStage.classList.add("final-open");
     giftImg.src = "assets/meg3.png";
-    hintText.style.display = "none";
-    result.style.display = "block";
-    step = 2;
-  }
 
+    // แสดงผลลัพธ์
+    result.style.display = "block";
+  }, 600); // ปรับเวลาได้ (ms)
 });

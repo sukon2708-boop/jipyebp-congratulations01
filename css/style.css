@@ -153,41 +153,43 @@ p{
 }
 
 
-/* =====================================================
-   GIFT / LETTER
-===================================================== */
+/* ===============================
+   GIFT IMAGE – FULL SCREEN FEEL
+=============================== */
+
 .gift-stage{
   display:flex;
   justify-content:center;
-  margin-top:10px;
+  align-items:center;
 }
 
+/* ขนาดปกติ (meg1 / meg2) */
 .gift-stage img{
-  width:200px;
-  max-width:85%;
-  cursor:pointer;
-  transition:.3s ease;
+  width:85vw;          /* ใหญ่เกือบเต็มจอ */
+  max-width:480px;
+  height:auto;
+  transition:.4s ease;
 }
 
-.gift-stage img:hover{
-  transform:scale(1.04);
+/* ===============================
+   FINAL IMAGE (meg3)
+=============================== */
+.gift-stage.final-open img{
+  width:96vw;          /* 🔥 ใหญ่สุด */
+  max-width:none;     /* ไม่จำกัดขนาด */
 }
 
-.hint{
-  margin-top:14px;
-  font-size:14px;
-  opacity:.75;
+/* มือถือ */
+@media (max-width:480px){
+  .gift-stage img{
+    width:90vw;
+  }
+
+  .gift-stage.final-open img{
+    width:100vw;       /* 🔥 เต็มหน้าจอ */
+  }
 }
 
-.result{
-  margin-top:22px;
-  animation:fadeUp .6s ease;
-}
-
-@keyframes fadeUp{
-  from{ opacity:0; transform:translateY(12px); }
-  to{ opacity:1; transform:none; }
-}
 
 .congrats{
   font-size:26px;
